@@ -12,7 +12,7 @@ const client = new Client({
 });
 
 // ⚠️ Replace this with your actual bot token
-const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
+const BOT_TOKEN = "MTM0MTA3ODM0NDk3MTg0NTc2NQ.GrWIFV.M-DUc_ZquZXAVVW0Vj8XwIpwFMueeQcA7pRIIk";
 
 // Channel & Role IDs
 const WELCOME_CHANNEL_ID = "1341094923541418107";
