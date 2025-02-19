@@ -1,4 +1,3 @@
-require("dotenv").config();
 const fs = require("fs");
 const { Client, GatewayIntentBits, EmbedBuilder } = require("discord.js");
 
@@ -11,6 +10,9 @@ const client = new Client({
         GatewayIntentBits.GuildMessageReactions
     ]
 });
+
+// ⚠️ Replace this with your actual bot token
+const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
 
 // Channel & Role IDs
 const WELCOME_CHANNEL_ID = "1341094923541418107";
@@ -27,7 +29,6 @@ client.once("ready", () => {
     console.log(`✅ Logged in as ${client.user.tag}`);
     sendSOTD();
     
-    // Only send Reaction Roles Embed if the file does NOT exist
     if (!fs.existsSync(REACTION_ROLES_FILE)) {
         sendReactionRolesEmbed();
     }
@@ -175,4 +176,5 @@ client.on("messageReactionRemove", async (reaction, user) => {
     user.send({ embeds: [embed] }).catch(() => console.log("⚠️ Cannot DM user!"));
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(BOT_TOKEN);
+
